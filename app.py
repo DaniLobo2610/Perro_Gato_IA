@@ -243,14 +243,13 @@ if archivo is not None:
         unsafe_allow_html=True
     )
 
-   st.markdown("""
+    st.markdown("""
+    <div class="footer">
 
-<div class="footer">
+    <hr>
 
-<hr>
+    Modelo desarrollado con TensorFlow • MobileNetV2 • Streamlit
 
-Modelo desarrollado con TensorFlow • MobileNetV2 • Streamlit
+    </div>
+    """, unsafe_allow_html=True)
 
-</div>
-
-""", unsafe_allow_html=True)
