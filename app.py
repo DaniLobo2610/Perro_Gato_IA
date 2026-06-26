@@ -200,47 +200,47 @@ if archivo is not None:
         use_container_width=True
     )
 
-    # Realizar la predicción
     clase, confianza = predecir(imagen)
 
     st.divider()
+
     st.subheader("Resultado")
 
-   if clase == "Perros":
+    if clase == "Perros":
 
-    st.markdown("""
-    <div style="
-    background:#d1fae5;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    font-size:30px;
-    font-weight:bold;
-    color:#065f46;">
-    🐶 Esto es un Perro
-    </div>
-    """, unsafe_allow_html=True)
+        st.markdown("""
+        <div style="
+        background:#d1fae5;
+        padding:20px;
+        border-radius:15px;
+        text-align:center;
+        font-size:30px;
+        font-weight:bold;
+        color:#065f46;">
+        🐶 Esto es un Perro
+        </div>
+        """, unsafe_allow_html=True)
 
-else:
+    else:
 
-    st.markdown("""
-    <div style="
-    background:#fee2e2;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    font-size:30px;
-    font-weight:bold;
-    color:#991b1b;">
-    🐱 Esto es un Gato
-    </div>
-    """, unsafe_allow_html=True)
+        st.markdown("""
+        <div style="
+        background:#fee2e2;
+        padding:20px;
+        border-radius:15px;
+        text-align:center;
+        font-size:30px;
+        font-weight:bold;
+        color:#991b1b;">
+        🐱 Esto es un Gato
+        </div>
+        """, unsafe_allow_html=True)
 
-    st.progress(confianza/100)
+    st.progress(confianza / 100)
 
     st.markdown(
-    f"<h2 style='text-align:center;color:#2563eb;'>Confianza: {confianza:.2f}%</h2>",
-    unsafe_allow_html=True
+        f"<h2 style='text-align:center;color:#2563eb;'>Confianza: {confianza:.2f}%</h2>",
+        unsafe_allow_html=True
     )
 
    st.markdown("""
