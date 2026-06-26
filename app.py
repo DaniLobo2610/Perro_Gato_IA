@@ -52,11 +52,18 @@ font-weight:400;
 
 .info{
 background:#F5F7FA;
-padding:15px;
+padding:18px;
 border-radius:15px;
 border-left:6px solid #2563eb;
 margin-top:20px;
 margin-bottom:20px;
+color:#1f2937;
+font-size:17px;
+line-height:1.7;
+}
+
+.info b{
+color:#111827;
 }
 
 .footer{
