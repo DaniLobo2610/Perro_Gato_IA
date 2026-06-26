@@ -28,22 +28,71 @@ st.set_page_config(
 # ==================================================
 
 st.markdown("""
-# 🐶🐱 Modelo Predictivo de Perros y Gatos
+<style>
 
-### Universidad Nacional Autónoma de Honduras
+.titulo{
+background: linear-gradient(90deg,#2563eb,#0ea5e9);
+padding:25px;
+border-radius:18px;
+text-align:center;
+color:white;
+box-shadow:0px 6px 18px rgba(0,0,0,.25);
+margin-bottom:25px;
+}
 
-**Ingeniería en Sistemas**
+.titulo h1{
+margin:0;
+font-size:38px;
+}
 
-**Inteligencia Artificial**
+.titulo h3{
+margin:8px;
+font-weight:400;
+}
 
----
+.info{
+background:#F5F7FA;
+padding:15px;
+border-radius:15px;
+border-left:6px solid #2563eb;
+margin-top:20px;
+margin-bottom:20px;
+}
 
-### 👨‍💻 Alberto Daniel Lobo Chavarría
+.footer{
+text-align:center;
+color:gray;
+font-size:14px;
+margin-top:30px;
+}
 
-Este sistema utiliza un modelo de Inteligencia Artificial basado en **MobileNetV2**
-para identificar automáticamente si una imagen corresponde a un **Perro** o un **Gato**.
-""")
+</style>
 
+<div class="titulo">
+
+<h1>🐶🐱 Modelo Predictivo de Perros y Gatos</h1>
+
+<h3>Universidad Nacional Autónoma de Honduras</h3>
+
+<h3>Ingeniería en Sistemas</h3>
+
+<h3>Inteligencia Artificial</h3>
+
+</div>
+
+<div class="info">
+
+<b>Desarrollado por:</b><br>
+
+👨‍💻 Alberto Daniel Lobo Chavarría
+
+<br><br>
+
+Este sistema utiliza un modelo de Deep Learning basado en <b>MobileNetV2</b> para clasificar imágenes de perros y gatos mediante Inteligencia Artificial.
+
+</div>
+
+""", unsafe_allow_html=True)
 
 # ==================================================
 # RUTAS
@@ -157,11 +206,51 @@ if archivo is not None:
     st.divider()
     st.subheader("Resultado")
 
-    if clase == "Perros":
-        st.success("🐶 Esto es un Perro")
-    else:
-        st.success("🐱 Esto es un Gato")
+   if clase == "Perros":
 
-    st.progress(min(confianza / 100, 1.0))
+    st.markdown("""
+    <div style="
+    background:#d1fae5;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    color:#065f46;">
+    🐶 Esto es un Perro
+    </div>
+    """, unsafe_allow_html=True)
 
-    st.write(f"**Confianza del modelo:** {confianza:.2f}%")
+else:
+
+    st.markdown("""
+    <div style="
+    background:#fee2e2;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    font-size:30px;
+    font-weight:bold;
+    color:#991b1b;">
+    🐱 Esto es un Gato
+    </div>
+    """, unsafe_allow_html=True)
+
+    st.progress(confianza/100)
+
+    st.markdown(
+    f"<h2 style='text-align:center;color:#2563eb;'>Confianza: {confianza:.2f}%</h2>",
+    unsafe_allow_html=True
+    )
+
+   st.markdown("""
+
+<div class="footer">
+
+<hr>
+
+Modelo desarrollado con TensorFlow • MobileNetV2 • Streamlit
+
+</div>
+
+""", unsafe_allow_html=True)
